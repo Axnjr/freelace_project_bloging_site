@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+@font-face {font-family: youcanusemenvm;src: url(font.ttf);}
+@font-face {font-family: youcanusemenvm;src: url(font.ttf);}
+@font-face {font-family: fancy;src: url(NeueMontreal-Light.otf);}
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+body{font-family: 'youcanusemenvm', sans-serif;padding: 0% auto;margin: 0% auto;line-height: 1.7;} 
+html{scroll-behavior: smooth;--bg-blend-mode: overlay;--gap: 3rem}
+p{font-family:'youcanusemenvm'/*'League Spartan',*/ sans-serif;}
+#google_translate_element select{background-image: url(translate.png);
+background-position: center;background-size: cover;font-size: large;font-weight: bold;font-family: 'youcanusemenvm', sans-serif;background-repeat: no-repeat;
+color:#0b0b0b;border: none;width: 2.1rem;height: 2.1rem;position: absolute;right: 18%;border-radius: 9999px;padding-right: 1rem;margin-top: 1.7rem;}
+.goog-logo-link{display:none!important;margin-top: -1rem;margin-left: 30rem;} .goog-te-gadget{
+color:transparent!important;} .goog-te-banner-frame{display:none !important; }#goog-gt-tt{display: none !important;}.goog-text-highlight { background: none !important; box-shadow: none !important;}
+.pehla_h{font-size: 1.875rem;color:rgb(255, 255, 255);position: absolute;top: 19px;text-decoration: none;font-family: 'youcanusemenvm',sans-serif;}
+
+@media (max-width:594px){#google_translate_element select{right: 34%;}}
+@media (max-width:501px){#google_translate_element select{position: fixed;right: 3.5%;top: 60%;width: 3.3rem;height: 3.3rem;}
+.pehla_h{font-size: 1.6rem;}}
+
+
+::-webkit-scrollbar {width: 10px;height: 10px;}::-webkit-scrollbar-track {box-shadow: inset 0 0 5px rgb(234, 234, 234); border-radius: 10px;}::-webkit-scrollbar-thumb {background: #fbfb5e; border-radius: 10px;}::-webkit-scrollbar-thumb:hover {background:#0b0b0b;}
+
+.backimg{margin-top: 5.3em;height: 100%;width: 100%;}@media (max-width:900px){.backimg{width: 100%;height: 80vh;}}@media(max-width:755px){.backimg{display: none;}}
+
+a {cursor: pointer;}input{outline: none;}#come input {text-transform:capitalize;}.searchdiv input {text-transform:capitalize;}
+.nav{width: 100%;height: 5.46rem;display: flex;position: absolute;top: 0px;flex-wrap: wrap;background-color: rgba(0, 0, 0, 0.593);}.main{display: flex;}
+
+
+/*this is search icon complexity section*/
+.searchsvgcon{ width: 2.6rem;height: 2.6rem;position: absolute;right: 5rem;top: 1.4rem;background-color: transparent;border-radius: 9999px;cursor: pointer;}
+.searchsvg{width: 1.8rem;height: 1.8rem;margin-left: 1.4rem;margin-top: 0.4rem;}
+/*search icon complexity section ends here*/
+.menu{text-align: center;padding-left: 10px;width: 2.6rem;height: 2.6rem;position: absolute;right: 1rem;top: 1.4rem;background-color: black;border-radius: 9999px;}
+.menu img{width: 1.8rem;height: 1.8rem;margin-top: 0.4rem;}
+
+.site{display: block;}
+#mc{width: 100%;height:auto;font-weight: bolder;line-height: 0;font-size: 8.9rem;font-family: 'Montserrat', sans-serif;color: #FFFDFA;}
+
+
+.smallsearch{display: block;}.smallinp{border-radius: 0.1rem;padding-left: 2rem;width: 100vmin;height: 6rem;color:rgb(0, 0, 0);font-size:1rem;outline: none;background-color:#ffffff;
+display: inline-block;}@media (max-width:501px){.smallinp{width: 80%;margin-block: 4rem;}}
+
+.heal{margin-top: 6rem;text-align: center;}.menucon{display: none;}.wavemenu{position: absolute;position: fixed;top: 0px;right: 0px;width: 130%;height: auto;fill: rgb(255, 255, 255);color: #fde047;}
+.menulinks a:hover{color:#fde047;}@media (max-width:888px){.wavemenu{width: 160%;}}@media (max-width:500px){.wavemenu{width: 300vh;}}
+.closemenu{position: absolute;position: fixed;top: 0px;right: 0px;margin: 1em;background-color: black;padding: 2px;border-radius: 50%;}
+.menulinks{color:#333;position: absolute;position: fixed;top: 7em;right: 0px;text-align: center;padding-right: 1.2em;text-decoration: none;}
+.menulinks a{font-size: 1.5rem;text-decoration: none;}@media (max-width:699px){.menulinks a{font-size: 1rem;}}@media (max-width:500px){.menulinks a{font-size: 2rem;padding-right: 4rem;}.menulinks{top: 10em;}}
+.categories{position:fixed;right:0%;top: 0rem;background-color: rgb(0, 0, 0);display: none;width: 50%;height: 100vh;}@media (max-width:527px){.categories{width: 47%;height: 100vmax;}}@media (max-width:501px){.categories{width: 100%;height: 300vmax;}}
+.cat{overflow-y: auto;width: 100%;height: 100%;display: block;}
+.cat a{font-size: xx-large;padding: 1.5rem;color: #ffffff;}@media (max-width:648px){.cat a{font-size: x-large;}}
+.cat a:hover{color: #fde047}.cat::-webkit-scrollbar{width: 10px;height: 30px;background-color: rgb(0, 0, 0);}.cat::-webkit-scrollbar-thumb{background-color: #7c7c7c;}
+
+.related{scrollbar-color: #90A4AE  #CFD8DC;scrollbar-width: thin;}
+
+#come p{font-family: sans-serif;font-weight:100;background-color: rgba(0,0,0,0.6);font-size: 1.5rem;padding-inline: 2rem;}
+@media (max-width:618px){#come p{font-size: 0.7rem;padding-inline: 0.5rem;}}
+
+.tren_art{margin-bottom: 3rem;text-align:center;font-size: 7.7rem;line-height: 1.2;font-weight: bolder;white-space:unset;padding-inline: 1rem;}
+.art{font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;width:28rem;height:17.5rem;background-color:rgb(255, 255, 255);border-radius: 4rem;margin-top: 1.5rem;margin-bottom: 5rem;margin-inline: 2rem;color: black;}
+@media (max-width:1024px){.art{width: 87rem;}}@media (max-width:600px){.tren_art{font-size: 5rem;text-align: left;}}@media (max-width:1000px){.larc{margin-top: 19rem;}}@media (max-width:857px){.larc{margin-top: 21rem;}}
+
+
+@media (max-width:784px){#mc{font-size: 7rem;}}
+@media (max-width:600px){#mc{font-size: 5rem;}.tren_art{font-size: 1.98rem;}}
+@media (max-width:500px){#mc{font-size: 4.5rem;}}
+
+
+
+.links{margin-top: -8rem}.links h1{font-size:medium;text-align: right;padding-right: 3.5rem;padding-top: 0.5rem;}
+@media (max-width:650px){.links h1{text-align: center;padding-left: 2rem;}.links{display: flex;}}
+.faq{text-align: center;width: 100%;height: auto;}
+
+@media(max-width:660px){.links{margin-top: 2rem;display: flex;flex-wrap: wrap;overflow: hidden;}.links h1{padding-right: 1.3rem}}
+.links h1:hover{color: #fde047;}.submit_email{ padding: 0.4rem;width: auto;height: 3.5rem;font-size: large;}
+.email_forminput{width: 80%;height: 4rem;margin-inline: 1rem;padding-left: 1rem;}@media (max-width:894px){.faq{margin-top: 9rem;}
+.submit_email{margin-inline: 1rem;width: 80%;font-size: x-large;text-align: center;}
+}
+footer{font-family: 'fancy', sans-serif;font-weight: 500;}

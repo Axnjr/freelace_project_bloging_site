@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'n.css' %}">
+    <script src="https://cdn.tailwindcss.com"></script>  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="{% static 'main.js' %}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- -->
+    <title> {% for t in masala %}{{t}}{% endfor %}</title>
+</head>
+<style>
+    body{font-family: 'youcanusemenvm',sans-serif;color: rgb(2,9,23);}
+    .read{margin-top: 4.9rem;margin-left: auto;margin-right: auto;}
+    .read p{word-spacing: 5px;text-align: left;padding-top: 2rem;padding-right: 8rem;padding-left: 4rem;}
+    .swal-overlay {
+    background-color: #000000df;}.swal-button{margin-left: auto;margin-right: auto;}#logosvgdown{fill: black;}
+   
+</style>
+<body>
+    <div class="read" style="margin-top: 5rem;">
+        {% for y in masala %}
+            <div class="" style="background-image: url({{y.link_to_pic}});background-size:cover;background-position: center;width: 100vmax;height: 100vh;">
+                <h1 class="bg-black text-2xl text-white w-40 text-center pt-2 px-2 ml-4">{{y.categories}}</h1>
+                <div class="flex">
+                    <button onclick="chosefont()" class="text-2xl text-white px-4 py-4" style="margin-left:80%;background-color: rgba(0,0,0);">Font</button>
+                    <button onclick="chosecolor()" class="font-family: 'Quicksand', sans-serif;font-family: 'League Spartan', sans-serif;text-2xl text-white w-auto h-auto px-4 py-4 ml-2" style="background-color: rgba(0,0,0);">Text Color</button>
+                </div>
+                <h1 class="text-6xl mt-8 ml-2 py-4 px-4 text-white" style="width: fit-content;background-color: rgba(0,0,0);word-wrap:break-word;">{{y.title}}</h1>
+                <h1 class="text-2xl left-auto ml-4 mt-10 text-white px-4 py-2" style="width: fit-content;background-color: black;">Published On : {{y.published_on}}</h1>
+                <div id="blog_content" class="ml-4 text-lg leading-10 bg-white w-auto h-auto mr-10 mt-12" style="border-radius: 5px;">
+                    <p>{{y.blog_one|capfirst|safe}}</p>
+                    <p>{{y.blog_two|capfirst|safe}}</p>
+                    <p>{{y.blog_three|capfirst|safe}}</p>
+                    <p class="mb-10" style="border-bottom: 0.7px solid gray;" >{{y.blog_four|capfirst}}</p>
+                    <h1 class="text-center ">WAS IT USEFUL ? | <a onclick="showfeedgood()" class="bg-black w-auto h-auto px-2 py-2 text-white mr-4"> 🥳 YES 🤩 </a><span><a onclick="showfeedbad()" class="bg-black w-auto h-auto px-2 py-2 text-white"> 😒 NO 😢 </a></span></h1>
+                    <h1 class="text-center">Click as many times as much it | worked | not worked |</h1>
+                </div>
+                <h1 class="text-7xl text-center py-16 pb-12">You Might Also Like</h1>
+                <div class="related flex" style="overflow-x: scroll;">
+                    {% for r in rel %}
+                        <div style="background-image: url({{r.link_to_pic}});background-size:cover;background-position: center;width:400px;min-width: 300px;height:23rem;margin-inline: 2rem;overflow: hidden;">
+                            <h1 class="text-4xl text-left px-4 pt-4 pb-16 text-black"><a href="/new?which={{r.id}}">{{r.title}}</a></h1>
+                            <h1>{{r.published_on}}</h1>
+                            <h4 class="px-2 w-full h-full text-white mt-2 py-16" style="background-color: rgba(0,0,0,0.6);">{{r.description}}....</h4>
+                        </div>
+                    {% endfor %}
+                </div>
+                <footer id="f" class="mt-20 w-full" style="color: white;background-color: black;">
+
+                    <h1 id="logodown" class="text-4xl flex pt-24" style="font-family: 'youcanusemenvm',sans-serif;">
+                        <svg version="1.0" id="logosvgdown" xmlns="http://www.w3.org/2000/svg" style="fill: white;"
+                        width="100" height="100" viewBox="0 70 320 320" preserveAspectRatio="xMidYMid meet">
+                       <g transform="translate(0.000000,320.000000) scale(0.100000,-0.100000)"
+                        ><path d="M1485 2394 c-318 -52 -575 -282 -661 -595 -25 -89 -25 -309 0 -398 78 -282 295 -499 577 -577 89 -25 309 -25 398 0 282 78 499 295 577 577 25 89 25 309 0 398 -77 280 -296 500 -571 576 -60 16 -263 28 -320 19z m215 -329 c45 -45 46 -45 48 -18 5 63 65 72 94 13 28 -56 76 -211 89 -285 14 -81 7 -370 -11 -488 l-12 -77 -277 2 -276 3 -23 65 c-45 125 -72 249 -72 335 0 71 4 90 31 143 30 61 53 79 94 73 43 -6 48 -20 41 -113 -8 -111 6 -147 68 -178 23 -11 50 -20 60 -20 26 0 73 27 90 52 18 26 21 96 5 130 -15 33 -91 90 -150 113 -59 23 -75 41 -66 77 9 33 45 48 119 48 58 0 60 1 54 23 -24 87 -14 147 26 147 13 0 41 -19 68 -45z"/></g>
+                       </svg><a href="/admin">Fit Naturally.</a>
+                    </h1>
+            
+                    <div class="links">
+                        <h1><a href="/other#donate">DONATE</a></h1>
+                        <h1><a href="/other#about"> ABOUT </a></h1>
+                        <h1><a href="/other#advertise">ADVERTISE </a></h1>
+                    </div>
+            
+                    <h1 id="futh" class="text-left pl-8 pb-12 text-xs" style="margin-top:2rem">© 2022 Fit Naturally . All rights reserved All mean's All .
+                       Made With Love In Milky Way Galaxy Beyond Infinity .
+                    </h1>
+            
+                </footer>
+            </div>
+            
+        {% endfor %}
+        
+    </div>
+   
+        <nav id="navbar" class="nav" style="background-color: #FFFDFA;">
+            <h1 id="logo" class="pehla_h flex"><svg version="1.0" id="logosvg" xmlns="http://www.w3.org/2000/svg"
+                width="90" height="90" viewBox="0 70 320 320" preserveAspectRatio="xMidYMid meet">
+                <g transform="translate(0.000000,320.000000) scale(0.100000,-0.100000)"
+                stroke="white" strokeWidth="2"><path d="M1485 2394 c-318 -52 -575 -282 -661 -595 -25 -89 -25 -309 0 -398 78 -282 295 -499 577 -577 89 -25 309 -25 398 0 282 78 499 295 577 577 25 89 25 309 0 398 -77 280 -296 500 -571 576 -60 16 -263 28 -320 19z m215 -329 c45 -45 46 -45 48 -18 5 63 65 72 94 13 28 -56 76 -211 89 -285 14 -81 7 -370 -11 -488 l-12 -77 -277 2 -276 3 -23 65 c-45 125 -72 249 -72 335 0 71 4 90 31 143 30 61 53 79 94 73 43 -6 48 -20 41 -113 -8 -111 6 -147 68 -178 23 -11 50 -20 60 -20 26 0 73 27 90 52 18 26 21 96 5 130 -15 33 -91 90 -150 113 -59 23 -75 41 -66 77 9 33 45 48 119 48 58 0 60 1 54 23 -24 87 -14 147 26 147 13 0 41 -19 68 -45z"/></g>
+                </svg><a  href="/admin" class="h-10">Fit Naturaly</a></h1>
+            
+            <!--Dark mode-->
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="darkmode()" id="sun" class="sun" fill="white" viewBox="0 0 24 24" stroke="white" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <!--end-->
+            <!--Bright mode-->
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="brightmode()" id="moon" class="moon" fill="white" viewBox="0 0 24 24" stroke="black" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+            <!--end-->
+            <div onclick="showwavemenu()" id="svgs" class="menu">
+                <a href="#"><img src="https://threespot-herokuapp-com.global.ssl.fastly.net/assets/icons/menu-49e26af01fbee07b9913707db1467e72d2d909d47299e6b0b0fd7fbe4f9dfbad.png"></a>
+            </div> 
+            <div>
+                <div id="google_translate_element"></div>
+                <script type="text/javascript">
+                function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');}
+                </script>
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            </div>
+            <div id="cat" class="categories">
+                <h1 class="text-white text-4xl text-left p-8">CATEGORY</h1>
+                <a class="absolute top-8 right-8" onclick="closecategories()"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg></a>
+                <div class="cat">
+                    {% for categories in cat %}
+                        <br><br><br><a href="/categories?name={{categories.id}}">{{categories}}</a><br><br>
+                    {% endfor %}
+                </div>
+            </div>
+        </nav>
+        
+        <div class="menucon" id="menudiv">
+            <svg class="wavemenu" id="visual" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path stroke-linecap="round" stroke-linejoin="miter">
+                <animate attributeType="XML" attributeName="d"
+                dur="1000ms" repeatCount="indefinite" 
+                values="M710 600L725.5 550C741 500 772 400 770.5 300C769 200 735 100 718 50L701 0L900 0L900 50C900 100 900 200 900 300C900 400 900 500 900 550L900 600Z;
+                "></animate></path></svg>
+                <a onclick="closewavemenu()"><img src="{% static 'menuclose.png' %}" class="closemenu"></a>
+            <div id="menulinks" class="menulinks pr-4">
+                <a href="/">HOME</a><br><br>
+                <a onclick="displaycategories()" class="text-2xl">CATEGORIES</a><br><br>
+                <a href="#">ABOUT</a><br><br>
+                <a href="#">DONATE</a><br><br>
+                <a href="#">INFO</a><br><br>
+                <a href="#">POST QUERY</a><br><br>
+            </div>
+        </div>
+</body>
+</html>
